@@ -13,7 +13,8 @@
     	"php": ">=5.5.0",
         "illuminate/console": "^5.1",
         "illuminate/filesystem": "^5.1",
-        "fzaninotto/faker": "^1.5"
+        "fzaninotto/faker": "^1.5",
+        "timothywalter/comment-to-code-generator": "master"
     },
     "autoload": {
     	"psr-4": {
