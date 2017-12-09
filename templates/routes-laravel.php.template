@@ -1,0 +1,8 @@
+/**
+ * Routes for resource {{resource}}
+ */
+Route::get(/*/>string: $resource/*/, /*/>string: {$controller}@all/*/);
+Route::get(/*/>string: {$resource}/id/*/, /*/>string: {$controller}@get/*/);
+Route::post(/*/>string: $resource/*/, /*/>string: {$controller}@add/*/);
+Route::put(/*/>string: {$resource}/id/*/, /*/>string: {$controller}@put/*/);
+Route::delete(/*/>string: {$resource}/id/*/, /*/>string: {$controller}@remove/*/);

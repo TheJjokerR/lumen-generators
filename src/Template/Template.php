@@ -1,5 +1,6 @@
 <?php namespace Wn\Generators\Template;
 
+use CommentToCode\Generators\BaseGenerator;
 use Wn\Generators\Template\TemplateLoader;
 
 
@@ -7,7 +8,7 @@ class Template {
 
 	protected $loader;
 
-	protected $text;
+	protected $generator;
 
 	protected $data;
 
@@ -15,10 +16,10 @@ class Template {
 
 	protected $dirty;
 
-	public function __construct(TemplateLoader $loader, $text)
+	public function __construct(TemplateLoader $loader, BaseGenerator $generator)
 	{
 		$this->loader = $loader;
-		$this->text = $text;
+		$this->generator = $generator;
 		$this->compiled = '';
 		$this->data = [];
 		$this->dirty = true;
@@ -38,6 +39,10 @@ class Template {
 		foreach ($data as $key => $value) {
 			$this->data[$key] = $value;
 		}
+		
+		$parser = $this->generator->getParser();
+		$parser->setVariables($this->data);
+		
 		return $this;
 	}
 
@@ -52,10 +57,8 @@ class Template {
 
 	public function compile()
 	{
-		$this->compiled = $this->text;
-		foreach($this->data as $key => $value){
-			$this->compiled = str_replace('{{' . $key . '}}', $value, $this->compiled);
-		}
+		$this->compiled = $this->generator->generate();
+		
 		return $this;
 	}	
 

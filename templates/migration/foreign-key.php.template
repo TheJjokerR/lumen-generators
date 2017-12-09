@@ -1,0 +1,3 @@
+            $table->foreign(/*/>string: $name/*/)
+                ->references(/*/>string: $column/*/)
+                ->on(/*/>string: $table/*/)

@@ -132,12 +132,16 @@ class ModelCommand extends BaseCommand {
         }
         $model = $this->argument('name');
         $rules = [];
-        $template = $this->getTemplate('model/rule');
-        foreach ($items as $item) {
-            $rules[] = $template->with(array_merge(
-                $item,
-                [ 'model' => $model ]
-            ))->get();
+        
+        if($inTemplate){
+            $template = $this->getTemplate('model/rule');
+
+            foreach ($items as $item) {
+                $rules[] = $template->with(array_merge(
+                    $item,
+                    [ 'model' => $model ]
+                ))->get();
+            }
         }
 
         return $inTemplate ? implode(PHP_EOL, $rules) : $items;

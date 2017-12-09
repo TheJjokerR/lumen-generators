@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class /*/>exec: $name/*/Table extends Migration
+{
+
+    public function up()
+    {
+        Schema::create(/*/>string: $table/*/, function(Blueprint $table) {
+            $table->increments('id');
+/*/>exec: $schema/*/
+/*/>exec: $constraints/*/
+/*/>exec: $additionals/*/
+        });
+    }
+
+    public function down()
+    {
+        Schema::drop(/*/>string: $table/*/);
+    }
+}

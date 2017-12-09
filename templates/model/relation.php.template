@@ -1,0 +1,4 @@
+    public function /*/>exec: $name/*/()
+    {
+        return $this->/*/>exec: $type/*/(/*/>string: $model/*/);
+    }

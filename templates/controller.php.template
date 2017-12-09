@@ -1,0 +1,9 @@
+<?php namespace App\Http\Controllers;
+
+class /*/>exec: $name/*/ extends Controller {
+
+    const MODEL = /*/>string: $model/*/;
+
+    use RESTActions;
+
+}

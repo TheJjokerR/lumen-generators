@@ -1,0 +1,9 @@
+
+/**
+ * Factory definition for model /*/>exec: $model/*/.
+ */
+$factory->define(/*/>exec: $model/*/::class, function ($faker) {
+    return [
+/*/>exec: $factory_fields/*/
+    ];
+});

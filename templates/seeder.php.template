@@ -1,0 +1,11 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class /*/>exec: $name/*/ extends Seeder
+{
+    public function run()
+    {
+        factory(/*/>exec: $model/*/::class, /*/>exec: $count/*/)->create();
+    }
+}
